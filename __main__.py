@@ -18,7 +18,7 @@ if __name__ == '__main__':
             setattr(namespace, 'func', getattr(face_client, values))
 
 
-    argparser = argparse.ArgumentParser(description="CNTK example")
+    argparser = argparse.ArgumentParser(description="Project Oxford Cognitive Services")
     subparsers = argparser.add_subparsers(help='sub-command help')
 
     # ---------- EMOTION -----------------------------------------------------------------------------------------------
