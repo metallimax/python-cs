@@ -28,13 +28,15 @@ if __name__ == '__main__':
 
     # ---------- EMOTION -----------------------------------------------------------------------------------------------
     parser_emotion = subparsers.add_parser('emotion', help='Emotion client')
-    parser_emotion.add_argument('-x', '--action', choices=['recognize', 'recognizeinvideo', 'operations', ],
+    parser_emotion.add_argument('-x', '--action', choices=['recognize', 'recognize_in_video', 'operations', ],
                                 action=ActionAction, help="Action")
+    # TODO add arguments
 
     # ---------- COMPUTER VISION ---------------------------------------------------------------------------------------
     parser_cv = subparsers.add_parser('cv', help='Computer vision client')
     parser_cv.add_argument('-x', '--action', choices=['analyze', ], action=ActionAction,
                            help="Action")
+    # TODO add arguments
 
     # ---------- FACE --------------------------------------------------------------------------------------------------
     parser_face = subparsers.add_parser('face', help='Face client')
@@ -42,6 +44,7 @@ if __name__ == '__main__':
                              help="Action")
     parser_face.add_argument('-i', '--image_url', help="Image URL")
     parser_face.add_argument('-l', '--face_list_id', help="Face list ID")
+    # TODO add arguments
 
     args, unknown = argparser.parse_known_args()
     kwargs = vars(args)
