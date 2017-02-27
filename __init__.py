@@ -1,1 +1,1 @@
-__all__ = ["face_client"]
+__all__ = ["face_client", "emotion_client", "computer_vision_client", ]

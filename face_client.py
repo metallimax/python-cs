@@ -31,17 +31,21 @@ class FaceClient(ProjectOxfordApi):
 
         return self.request(method='get', endpoint=api_url, json=json, data=data, params=params)
 
-    def detect(self, image_url, **kw):
+    def detect(self, image_url, return_face_id=True, return_face_landmarks=True, return_face_attributes=None, **kw):
         """
         .Net DetectAsync equivalent
         :return:
         """
 
+        if return_face_attributes is None:
+            return_face_attributes = ['age', 'gender', 'headPose', 'smile', 'facialHair', 'glasses', ]
+
         json = {'url': image_url}
         data = None
         params = {
-            'returnFaceId': 'true',
-            'returnFaceLandmarks': 'true',
+            'returnFaceId': return_face_id,
+            'returnFaceLandmarks': return_face_landmarks,
+            'returnFaceAttributes': ','.join(return_face_attributes),
         }
         # json = {
         # }
